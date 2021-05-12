@@ -142,7 +142,7 @@ Last, save the new JSON file in the specified directory.
 ## Level 2
 First, to create a simple local HTTP server, I created a new class inherited from `BaseHTTPRequestHandler` from `http.server` module. I programmed the method `do_POST` to fulfill the task.
 
-Second, I used `json.load` to receive the body from the post request. The text is under the key *log*.
+Second, I used `json.load` to receive the body from the POST request. The text is under the key *log*.
 
 Last, I applied the algorithm from Level 1 to complete the rest of task.  
 
@@ -152,14 +152,14 @@ First, I made a connection to redis server `conn = redis.Redis("localhost")`.
 
 Second, instead saving the json to a directory, I pushed it to a Redis `LIST` as requested by `conn.rpush`.
 
-Last, start the Redis server first, then make POST requests to the local HTTP server.
+Last, start the Redis Server first, then make POST requests to the local HTTP server.
 
 ## Level 4
 First, I used [Redis Queue](python-rq.org) to complete this task. After connecting to Redis, I use a task Queue to receive the 'long-running' task and send a `200` response back immediately to avoid timeout.
 
 Second, I created a function to process the task in the background, the same algorithm as in previous tasks. 
 
-Last, start both Redis server and Redis Worker before making POST requests to the local HTTP server.
+Last, start both Redis Server and RQ Worker before making POST requests to the local HTTP server.
 
 ## Level SQL
 First, I read two csv files into Pandas Dataframe. I fixed the null value with Pandas. 
@@ -179,3 +179,5 @@ where car.id = rental.car_id and date(car.created_at) <= date(rental.starts_at) 
 group by year_starts_at, month_starts_at, car_id
 having no_rental>=3;
 ```
+
+Last, the final answer is printed to the screen.
