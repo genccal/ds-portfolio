@@ -181,3 +181,5 @@ having no_rental>=3;
 ```
 
 Last, the final answer is printed to the screen.
+
+`347869 cars have been rented more than 3 times since inception`
